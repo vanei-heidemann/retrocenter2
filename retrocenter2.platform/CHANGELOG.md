@@ -42,3 +42,15 @@
 ## 00006
 - <p>Isolated business logic in a separated service.</p>
 - <p>Created a mapper class with manual copy of values.</p>
+
+## 00007
+- <p>Changed setting to use a yaml file.</p>
+<p>This was done by adding the following code to pom.xml file:</p>
+
+```xml
+<dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-config-yaml</artifactId>
+</dependency>
+```
+<p>And creating the file <b>src/main/resources/application.yaml</b>.</p>
