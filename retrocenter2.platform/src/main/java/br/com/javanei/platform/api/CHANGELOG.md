@@ -23,3 +23,18 @@
 
 ## 00004
 - <p>Created CHANGELOG file.</p>
+
+## 00005
+- <p>Added OpenAPI documentation.</p>
+<p>This was done by adding the following code to pom.xml file:</p>
+
+```xml
+<dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-smallrye-openapi</artifactId>
+</dependency>
+```
+- <p>Configured swagger-ui in application.properties.</p>
+- <p>Created class <b>OpenAPIDefinitionApplication</b> to define general documentation information.</p>
+- <p>Changed return of methods whose types was a List in order to be documented.</p>
+- <p>Added OpenAPI documentation to resources and objects.

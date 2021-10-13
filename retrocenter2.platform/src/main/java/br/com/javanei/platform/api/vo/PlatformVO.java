@@ -3,13 +3,23 @@ package br.com.javanei.platform.api.vo;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
+@Schema(name = "Platform", description = "POJO representing a platform")
 public class PlatformVO {
+    @Schema(required = true, name = "id", minimum = "0", description = "Platform identifier")
     private Long id;
+    @Schema(required = true, name = "name", description = "Platform name")
     private String name;
+    @Schema(required = false, name = "shortName", description = "Platform short name")
     private String shortName;
+    @Schema(required = false, name = "alternateNames", description = "Platform alternate names")
     private List<String> alternateNames = new LinkedList<>();
+    @Schema(required = false, name = "ssId", description = "Platform identifier in ScreenScraper")
     private Integer ssId;
+    @Schema(required = false, name = "esCode", description = "Platform code in EmulationStation")
     private String esCode;
+    @Schema(required = false, name = "romFileExtensions", description = "ROM file extensions")
     private String romFileExtensions;
 
     public Long getId() {

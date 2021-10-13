@@ -31,7 +31,7 @@ public class PlatformResourceTest {
             .then()
             .assertThat()
             .statusCode(200)
-            .body("size()", is(10));
+            .body("platforms.size()", is(10));
     }
 
     @Test
@@ -41,7 +41,7 @@ public class PlatformResourceTest {
             .then()
             .assertThat()
             .statusCode(200)
-            .body("size()", is(20));
+            .body("platforms.size()", is(20));
     }
 
     @Test
