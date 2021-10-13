@@ -38,3 +38,7 @@
 - <p>Created class <b>OpenAPIDefinitionApplication</b> to define general documentation information.</p>
 - <p>Changed return of methods whose types was a List in order to be documented.</p>
 - <p>Added OpenAPI documentation to resources and objects.
+
+## 00006
+- <p>Isolated business logic in a separated service.</p>
+- <p>Created a mapper class with manual copy of values.</p>
