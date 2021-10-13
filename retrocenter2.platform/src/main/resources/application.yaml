@@ -1,0 +1,16 @@
+quarkus:
+  http:
+    root-path: /platform
+    port: 8080
+    host: 0.0.0.0
+    http2: true
+  swagger:
+    ui:
+      always-include: true # Enable swagger-ui in production
+      theme: material
+      display-request-duration: true
+mp:
+  openapi:
+    extensions:
+      smallrye:
+        operationIdStrategy: METHOD
