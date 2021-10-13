@@ -36,7 +36,7 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy</artifactId>
     </dependency>
-    
+
     <!-- Parser JSON-B -->
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -47,6 +47,12 @@
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-smallrye-openapi</artifactId>
+    </dependency>
+
+    <!-- Changed config to yaml file -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-config-yaml</artifactId>
     </dependency>
 
     <dependency>
