@@ -1,5 +1,8 @@
 package br.com.javanei.platform.api;
 
+import java.util.List;
+
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
@@ -19,11 +22,16 @@ import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 
+import br.com.javanei.platform.api.mapper.PlatformMapper;
 import br.com.javanei.platform.api.vo.PlatformListVO;
 import br.com.javanei.platform.api.vo.PlatformVO;
+import br.com.javanei.platform.service.PlatformDTO;
+import br.com.javanei.platform.service.PlatformService;
 
 @Path("/api/v1/platforms")
 public class PlatformResource {
+    @Inject
+    PlatformService platformService;
 
     @APIResponses(
         value = {
@@ -52,7 +60,8 @@ public class PlatformResource {
         @Parameter(description = "Platform info", required = true) 
         @RequestBody(description = "Platform to create", required = true) PlatformVO createVO
         ) {
-        return createVO;
+            PlatformVO result = PlatformMapper.toVO(platformService.create(PlatformMapper.toDTO(createVO)));
+            return result;
     }
 
     @APIResponses(
@@ -81,7 +90,7 @@ public class PlatformResource {
     public PlatformVO findById(
         @Parameter(description = "Platform identifier", required = true, example = "1", in = ParameterIn.PATH) @PathParam("id") Long id
         ) {
-        PlatformVO result = new PlatformVO().setId(id).setName(String.format("Platform %d", id));
+        PlatformVO result = PlatformMapper.toVO(platformService.findById(id));
         return result;
     }
 
@@ -108,12 +117,8 @@ public class PlatformResource {
         @Parameter(description = "Start page", required = true, example = "0", in = ParameterIn.QUERY) @QueryParam("page") @DefaultValue("0") int page,
         @Parameter(description = "Page size", required = true, example = "100", in = ParameterIn.QUERY) @QueryParam("pageSize") @DefaultValue("100") int pageSize
         ) {
-            PlatformListVO result = new PlatformListVO();
-        for (int i = 0; i < pageSize; i++) {
-            PlatformVO vo = new PlatformVO().setId((long)(i + (page * pageSize) + 1));
-            vo.setName(String.format("Platform %d", vo.getId()));
-            result.add(vo);
-        }
+        List<PlatformDTO> list = platformService.find(name, alternateName, page, pageSize);
+        PlatformListVO result = PlatformMapper.toListVO(list);
         return result;
     }
 }
