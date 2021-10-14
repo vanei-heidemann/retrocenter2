@@ -1,9 +1,9 @@
-package br.com.javanei.platform.api.mapper;
+package br.com.javanei.platform.api.v1.mapper;
 
 import java.util.List;
 
-import br.com.javanei.platform.api.vo.PlatformListVO;
-import br.com.javanei.platform.api.vo.PlatformVO;
+import br.com.javanei.platform.api.v1.vo.PlatformListVO;
+import br.com.javanei.platform.api.v1.vo.PlatformVO;
 import br.com.javanei.platform.service.PlatformDTO;
 
 public class PlatformMapper {

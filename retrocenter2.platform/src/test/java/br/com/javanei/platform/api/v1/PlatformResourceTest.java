@@ -1,4 +1,4 @@
-package br.com.javanei.platform.api;
+package br.com.javanei.platform.api.v1;
 
 import io.quarkus.test.junit.QuarkusTest;
 
@@ -10,7 +10,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.junit.jupiter.api.Test;
 
-import br.com.javanei.platform.api.vo.PlatformVO;
+import br.com.javanei.platform.api.v1.vo.PlatformVO;
 
 @QuarkusTest
 public class PlatformResourceTest {

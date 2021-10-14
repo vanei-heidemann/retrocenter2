@@ -1,4 +1,4 @@
-package br.com.javanei.platform.api;
+package br.com.javanei.platform.api.v1;
 
 import java.util.List;
 
@@ -22,9 +22,9 @@ import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 
-import br.com.javanei.platform.api.mapper.PlatformMapper;
-import br.com.javanei.platform.api.vo.PlatformListVO;
-import br.com.javanei.platform.api.vo.PlatformVO;
+import br.com.javanei.platform.api.v1.mapper.PlatformMapper;
+import br.com.javanei.platform.api.v1.vo.PlatformListVO;
+import br.com.javanei.platform.api.v1.vo.PlatformVO;
 import br.com.javanei.platform.service.PlatformDTO;
 import br.com.javanei.platform.service.PlatformService;
 
