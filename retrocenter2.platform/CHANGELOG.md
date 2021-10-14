@@ -54,3 +54,12 @@
 </dependency>
 ```
 <p>And creating the file <b>src/main/resources/application.yaml</b>.</p>
+
+## 00008
+- <p>Migrated API to v1 package.</p>
+
+## 00009
+- <p>Created README file.</p>
+
+## 00010
+- <p>Fixed config file.</p>
