@@ -1,4 +1,4 @@
-package br.com.javanei.platform.api.vo;
+package br.com.javanei.platform.api.v1.vo;
 
 import java.util.LinkedList;
 import java.util.List;
